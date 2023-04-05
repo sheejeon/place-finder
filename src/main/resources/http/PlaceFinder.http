@@ -1,0 +1,5 @@
+GET http://localhost:8080/places?keyword=대구 우야지막창&size=5
+
+###
+
+GET http://localhost:8080/places/ranking?size=3
