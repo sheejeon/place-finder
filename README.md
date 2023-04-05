@@ -1,5 +1,4 @@
 # place-finder
-
 - place-finder는 장소를 검색하고, 검색 키워드 목록을 제공합니다.
 
 # Installation
@@ -15,7 +14,7 @@ mvn clean install
 장소와 결과 목록 개수(default: 10)를 입력 받아 kakaoAPI, naverAPI를 각각 호출하여 검색 결과를 구성합니다. \
 이 때, 검색 결과는 kakaoAPI, naverAPI에서 받아온 주소를 동일한 장소인지 판별합니다. \
 현재 장소이름으로 동일 여부를 판단하고 있으나, \
-application.yml 파일 내 place-finder.api.google.use 설정을 true로 변경할 경우 주소값으로 googleAPI에 동일한지 체크할 수 있습니다.
+application.yml 파일 내 place-finder.api.google.use 설정을 true로 변경할 경우 주소값으로 googleAPI를 통해 동일한 장소인지 체크할 수 있습니다.
 동일한 장소일 경우 우선 배치되어 반환됩니다.
 - ranking \
 가장 많이 검색된 순서대로 키워드 목록을 반환합니다. 이 때, 목록 개수(default: 10)를 입력 받을 수 있습니다.
@@ -25,7 +24,8 @@ PlaceFinder.http 파일을 이용하여 api 테스트를 수행할 수 있습니
 
 ## develop
 ### 확장성
-장소명 뿐만 아니라 추가적으로 장소에 대한 정보를 반환하고 싶을 경우를 대비하여 Place 도메인을 정의하여 반환 값을 손쉽게 추가할 수 있습니다.
+- 장소명 뿐만 아니라 추가적으로 장소에 대한 정보를 반환하고 싶을 경우를 대비하여 Place 도메인을 정의하여 반환 값을 손쉽게 수정할 수 있습니다.
+- size를 10로 지정해놓지 않고, 입력값으로 받아 해당 size만큼 반환합니다.
 
 ### 동시성
 여러 사용자가 동시에 검색 서비스를 이용하면 검색 로그와 검색어 정보가 계속해서 쌓이게 되고, \
